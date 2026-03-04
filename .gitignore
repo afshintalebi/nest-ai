@@ -1,0 +1,21 @@
+# Dependencies
+node_modules
+/node_modules
+
+# Environment variables
+.env
+
+# Build artifacts and temporary files
+build
+dist
+tmp
+log
+npm-debug.log*
+
+# Test coverage
+coverage
+
+# IDE and OS files (examples)
+.DS_Store
+.idea/
+.vscode/

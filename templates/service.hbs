@@ -1,0 +1,16 @@
+import { Injectable } from '@nestjs/common';
+import { CommandBus, QueryBus } from '@nestjs/cqrs';
+import { Create{{className}}Dto } from './cqrs/dtos/create-{{camelCaseName}}.dto';
+import { Create{{className}}Command } from './cqrs/commands/impl/create-{{camelCaseName}}.command';
+
+@Injectable()
+export class {{className}}Service {
+  constructor(
+    private readonly commandBus: CommandBus,
+    private readonly queryBus: QueryBus,
+  ) {}
+
+  async create(dto: Create{{className}}Dto) {
+    return this.commandBus.execute(new Create{{className}}Command(dto));
+  }
+}

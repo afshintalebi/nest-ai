@@ -1,0 +1,15 @@
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
+
+export type {{className}}Document = {{className}} & Document;
+
+@Schema({ timestamps: true })
+export class {{className}} {
+{{#each properties}}
+  @Prop({ required: {{this.isRequired}} })
+  {{this.name}}: {{this.type}};
+
+{{/each}}
+}
+
+export const {{className}}Schema = SchemaFactory.createForClass({{className}});

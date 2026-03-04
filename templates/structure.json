@@ -1,0 +1,33 @@
+{
+    "description": "NestJS CQRS Architecture",
+    "files": [
+      {
+        "template": "schema.hbs",
+        "output": "schemas/{{camelCaseName}}.schema.ts"
+      },
+      {
+        "template": "create-dto.hbs",
+        "output": "cqrs/dtos/create-{{camelCaseName}}.dto.ts"
+      },
+      {
+        "template": "create-command.hbs",
+        "output": "cqrs/commands/impl/create-{{camelCaseName}}.command.ts"
+      },
+      {
+        "template": "create-handler.hbs",
+        "output": "cqrs/commands/handlers/create-{{camelCaseName}}.handler.ts"
+      },
+      {
+        "template": "service.hbs",
+        "output": "{{camelCaseName}}.service.ts"
+      },
+      {
+        "template": "controller.hbs",
+        "output": "{{camelCaseName}}.controller.ts"
+      },
+      {
+        "template": "module.hbs",
+        "output": "{{camelCaseName}}.module.ts"
+      }
+    ]
+  }

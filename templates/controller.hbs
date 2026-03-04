@@ -1,0 +1,15 @@
+import { Controller, Post, Body } from '@nestjs/common';
+import { ApiOperation } from '@nestjs/swagger';
+import { {{className}}Service } from './{{camelCaseName}}.service';
+import { Create{{className}}Dto } from './cqrs/dtos/create-{{camelCaseName}}.dto';
+
+@Controller('{{camelCaseName}}s')
+export class {{className}}Controller {
+  constructor(private readonly {{camelCaseName}}Service: {{className}}Service) {}
+
+  @Post()
+  @ApiOperation({ description: 'Create a new {{className}}' })
+  async create(@Body() dto: Create{{className}}Dto) {
+    return this.{{camelCaseName}}Service.create(dto);
+  }
+}

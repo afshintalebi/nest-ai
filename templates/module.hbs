@@ -1,0 +1,25 @@
+import { Module } from '@nestjs/common';
+import { CqrsModule } from '@nestjs/cqrs';
+import { MongooseModule } from '@nestjs/mongoose';
+import { {{className}}Controller } from './{{camelCaseName}}.controller';
+import { {{className}}Service } from './{{camelCaseName}}.service';
+import { {{className}}, {{className}}Schema } from './schemas/{{camelCaseName}}.schema';
+import { Create{{className}}Handler } from './cqrs/commands/handlers/create-{{camelCaseName}}.handler';
+
+const CommandHandlers = [Create{{className}}Handler];
+const QueryHandlers = []; // Add query handlers here later
+
+@Module({
+  imports: [
+    CqrsModule,
+    MongooseModule.forFeature([{ name: {{className}}.name, schema: {{className}}Schema }]),
+  ],
+  controllers: [{{className}}Controller],
+  providers: [
+    {{className}}Service,
+    ...CommandHandlers,
+    ...QueryHandlers,
+  ],
+  exports: [{{className}}Service],
+})
+export class {{className}}Module {}
