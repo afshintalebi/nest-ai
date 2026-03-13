@@ -138,9 +138,6 @@ export class Create{{className}}Dto {
 
 This project is licensed under the **MIT License**. You are free to use, modify, and distribute this software in both personal and commercial projects. 
 
-*(Optional: Create a `LICENSE` file in your repository with the full MIT License text).*
-
-
 ## ⚠️ Disclaimer (AI-Assisted Tool)
 
 This tool utilizes Large Language Models (LLMs) to parse requirements and generate schema definitions. While the Handlebars templating engine guarantees strict architectural formatting and prevents raw code hallucinations, the AI may occasionally misinterpret property types or entity relationships based on your prompt. 
