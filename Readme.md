@@ -9,8 +9,6 @@ An intelligent, AI-powered CLI tool that generates highly-opinionated NestJS boi
 - **⚙️ Configuration-Driven:** Entirely template-based using `Handlebars` (.hbs) and a `structure.json` file. You can change the generated code without touching the TypeScript CLI engine.
 - **🛡️ Smart Conflict Resolution:** Interactive terminal prompts protect you from accidentally overwriting existing files (Skip, Overwrite, Overwrite All, or Abort).
 
----
-
 ## 📂 Target Architecture
 
 This tool is designed to generate files into a structured NestJS application. If you ask the tool to generate a `Customer` entity in the `core` module, it produces the following structure:
@@ -29,8 +27,6 @@ src/
         ├── customer.controller.ts
         └── customer.module.ts
 ```
-
----
 
 ## 🚀 Getting Started
 
@@ -51,9 +47,7 @@ src/
    ```env
    OPENAI_API_KEY=sk-your-openai-api-key-here
    ```
-
----
-
+   
 ## 💻 Usage
 
 Run the generator via npm by passing your module requirements as a string prompt.
@@ -78,8 +72,6 @@ If the tool detects that a file already exists (e.g., you are running the comman
   🛑 Abort generation completely
 ```
 
----
-
 ## 🛠️ How it Works (Under the Hood)
 This tool utilizes a Hybrid AI + Templating Approach to prevent AI hallucinations.
 
@@ -98,8 +90,6 @@ Instead of asking the AI to write raw NestJS code (which is prone to errors, mis
 ```
 
 The CLI then passes this JSON to <strong>Handlebars (.hbs) templates</strong> to generate guaranteed, perfectly formatted TypeScript code.
-
----
 
 ## 🎨 Customizing the Templates
 Because this tool is Configuration-Driven, you can add new files (like Unit Tests, Swagger configurations, or GraphQL Resolvers) without modifying the underlying TypeScript generator engine!
@@ -137,9 +127,23 @@ export class Create{{className}}Dto {
 }
 ```
 
----
-
 ## 🤝 Next Steps & Extension Ideas
 - **Update/Delete/Get**: Add standard CQRS Read and Update `queries/handlers` to the `structure.json` and templates.
 - **Custom Handlebars Helpers**: Add string manipulation helpers to your `generator.ts` (e.g., converting names to `UPPER_SNAKE_CASE` for constants).
 - **Swagger/OpenAPI**: Update the DTO templates to automatically inject `@ApiProperty()` decorators.
+
+## ⚖️ License & Copyright
+
+**Copyright (c) 2026 Afshin Talebi**
+
+This project is licensed under the **MIT License**. You are free to use, modify, and distribute this software in both personal and commercial projects. 
+
+*(Optional: Create a `LICENSE` file in your repository with the full MIT License text).*
+
+
+## ⚠️ Disclaimer (AI-Assisted Tool)
+
+This tool utilizes Large Language Models (LLMs) to parse requirements and generate schema definitions. While the Handlebars templating engine guarantees strict architectural formatting and prevents raw code hallucinations, the AI may occasionally misinterpret property types or entity relationships based on your prompt. 
+
+**Usage Recommendation:** Always review the generated schemas, CQRS handlers, and DTOs before committing them to your production repositories.
+
